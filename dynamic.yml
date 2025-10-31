@@ -1,0 +1,26 @@
+# 动态配置：定义中间件、路由与服务
+
+http:
+  middlewares:
+    rewrite-body-key:
+      plugin:
+        traefik-plugin-rewrite-request-body:
+          oldKey: "oldKey"
+          newKey: "newKey"
+
+  routers:
+    sample-router:
+      rule: "PathPrefix(`/api`)"
+      entryPoints:
+        - web
+      service: sample-svc
+      middlewares:
+        - rewrite-body-key
+
+  services:
+    sample-svc:
+      loadBalancer:
+        servers:
+          - url: "http://backend:8080"
+
+

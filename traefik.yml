@@ -1,0 +1,25 @@
+# 静态配置：启用插件（Go Module 模式）与文件提供器
+
+log:
+  level: INFO
+
+providers:
+  file:
+    filename: /etc/traefik/dynamic.yml
+
+experimental:
+  plugins:
+    rewrite-body-key:
+      moduleName: github.com/yourusername/traefik-plugin-rewrite-request-body
+      version: v0.1.0
+
+# 可选：指定插件缓存目录（容器需挂载可写目录）
+# plugins:
+#   storage:
+#     path: /plugins-storage
+
+entryPoints:
+  web:
+    address: ":80"
+
+
