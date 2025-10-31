@@ -1,4 +1,4 @@
-module github.com/Xu-pixel/traefik-plugin-rewrite-request-body
+module github.com/Xu-pixel/rewrite-request-body
 
 go 1.23.0
 

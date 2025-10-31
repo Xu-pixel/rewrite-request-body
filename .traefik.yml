@@ -1,5 +1,5 @@
 type: middleware
-import: github.com/yourusername/traefik-plugin-rewrite-request-body
+import: github.com/Xu-pixel/rewrite-request-body
 displayName: Rewrite Request Body Key
 summary: Rename a top-level key in JSON request body (oldKey -> newKey)
 testData:
